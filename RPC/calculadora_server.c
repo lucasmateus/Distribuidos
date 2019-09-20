@@ -12,20 +12,14 @@ fatorial_1_svc(operands *argp, struct svc_req *rqstp)
 {
 	static int  result;
 
-	/*
-	 * insert server code here
-	 */
-
 	int fat, n;
 	n = argp->x;
 
-	// printf("Debug: n = %d\n", n);
 	
 	for(fat = 1; n > 1; n = n - 1){
 		fat = fat * n;
 	}
-
-	printf("Fatorial: fatorial(%d) = %d\n", n, fat);
+	result = fat;
 	return &result;
 }
 
@@ -41,7 +35,7 @@ modulo_1_svc(operands *argp, struct svc_req *rqstp)
 	int a = argp->x;
 	int b = argp->y;
 	int resultado_modulo = (a % b);
-	printf("Modulo: %d %% %d = %d\n", a, b, resultado_modulo);
+	result = resultado_modulo;
 	return &result;
 }
 
@@ -62,8 +56,7 @@ max_1_svc(operands *argp, struct svc_req *rqstp)
 	} else {
 		resultado_max = b;
 	}
-
-	printf("Max: max(%d, %d) = %d\n", a, b, resultado_max);
+	result = resultado_max;
 	return &result;
 }
 
@@ -72,13 +65,10 @@ soma_1_svc(operands *argp, struct svc_req *rqstp)
 {
 	static int  result;
 
-	/*
-	 * insert server code here
-	 */
 	int a = argp->x;
 	int b = argp->y;
 	int resultado_soma = (a + b);
-	printf("Soma: %d + %d = %d\n", a, b, resultado_soma);
+	result = resultado_soma;
 	return &result;
 }
 
@@ -93,7 +83,7 @@ subtracao_1_svc(operands *argp, struct svc_req *rqstp)
 	int a = argp->x;
 	int b = argp->y;
 	int resultado_subtracao = (a - b);
-	printf("Subtração: %d - %d = %d\n", a, b, resultado_subtracao);
+	result = resultado_subtracao;
 	return &result;
 }
 
@@ -102,14 +92,10 @@ devisao_1_svc(operands *argp, struct svc_req *rqstp)
 {
 	static int  result;
 
-	/*
-	 * insert server code here
-	 */
-
 	int a = argp->x;
 	int b = argp->y;
 	float resultado_divisao = a / b;
-	printf("Divisão: %d / %d = %f\n", a, b, resultado_divisao);
+	result = resultado_divisao;
 	return &result;
 }
 
@@ -118,13 +104,9 @@ multiplicacao_1_svc(operands *argp, struct svc_req *rqstp)
 {
 	static int  result;
 
-	/*
-	 * insert server code here
-	 */
-
 	int a = argp->x;
 	int b = argp->y;
 	int resultado_multiplicacao = (a * b);
-	printf("Multiplicação: %d * %d = %d\n", a, b, resultado_multiplicacao);
+	result = resultado_multiplicacao;
 	return &result;
 }
