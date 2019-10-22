@@ -8,7 +8,7 @@ class CookieServer_i(Fortune__POA.CookieServer):
         pipe   = os.popen(FORTUNE_PATH)
         cookie = pipe.read()
         if pipe.close():
-            cookie = "Daniel vai penar um pouco...\n"
+            cookie = "Ola Mundo Python Corba\n"
         return cookie
 
 orb = CORBA.ORB_init(sys.argv)
